@@ -12,7 +12,7 @@ You will need working installations of Go and Git.
 
 Run the folowing commands in your terminal:
 
-    $ cd "`go env GOPATH`"
+    $ cd "`go env GOPATH`/src"
 
     $ git clone https://github.com/jjzn/gomeme
 
