@@ -20,6 +20,8 @@ func main() {
 		printHelp()
 	case "get":
 		getMeme()
+        case "view":
+                viewMeme()
 	default:
 		printError()
 	}
@@ -75,6 +77,15 @@ func getMeme() {
 		fmt.Println("Error: write error (cannot write to file)")
 		os.Exit(1)
 	}
+}
+
+func viewMeme() {
+        if len(os.Args) < 3 {
+                fmt.Println("Error: no local or remote meme ar  gument passed")
+                os.Exit(1)
+        }
+
+        os.exec.Command("xdg-open", os.Args[2]).Run()
 }
 
 func printError() {
