@@ -1,0 +1,21 @@
+Gomeme
+======
+
+Gomeme is a small program written in Go which helps you to download and save memes.
+It isn't useful at all since it's one of my first programs in Go.
+
+Feel free to submit a pull request if you want to improve something.
+
+Installation
+------------
+You will need working installations of Go and Git.
+
+Run the folowing commands in your terminal:
+
+    $ cd "`go env GOPATH`"
+
+    $ git clone https://github.com/jjzn/gomeme
+
+    $ cd gomeme
+
+    $ go install
