@@ -78,6 +78,13 @@ func getMeme() {
 		fmt.Println("Error: write error (cannot write to file)")
 		os.Exit(1)
 	}
+
+	var ans string
+	fmt.Print("Would you like to view the meme [y]/n: ")
+	fmt.Scanln(&ans)
+	if ans != "n" && ans != "no" {
+		exec.Command("xdg-open", filename).Run()
+	}
 }
 
 func viewMeme() {
