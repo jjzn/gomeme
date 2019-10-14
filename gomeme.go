@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"os/exec"
 	"strings"
 	"time"
 )
@@ -20,8 +21,8 @@ func main() {
 		printHelp()
 	case "get":
 		getMeme()
-        case "view":
-                viewMeme()
+	case "view":
+		viewMeme()
 	default:
 		printError()
 	}
@@ -80,12 +81,12 @@ func getMeme() {
 }
 
 func viewMeme() {
-        if len(os.Args) < 3 {
-                fmt.Println("Error: no local or remote meme ar  gument passed")
-                os.Exit(1)
-        }
+	if len(os.Args) < 3 {
+		fmt.Println("Error: no local or remote meme ar  gument passed")
+		os.Exit(1)
+	}
 
-        os.exec.Command("xdg-open", os.Args[2]).Run()
+	exec.Command("xdg-open", memefolder+os.Args[2]).Run()
 }
 
 func printError() {
